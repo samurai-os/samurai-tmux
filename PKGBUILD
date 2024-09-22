@@ -5,13 +5,13 @@
 
 # Maintainer: Paul Buzakov <paulbuzakov@gmail.com>
 pkgname=samurai-tmux
-pkgver=0.1.0.beta.r1.g84f3c0a
+pkgver=0.1.0.beta.r2.g2136c4c
 pkgrel=1
 epoch=
 pkgdesc="TMUX config for SamuraiOS DevTeam Linux"
-arch=('x86_64')
-url="https://github.com/samurai-os/samurai-tmux"
-license=('ISC')
+arch=("x86_64")
+url="https://github.com/samurai-os/samurai-tmux.git"
+license=("ISC")
 groups=()
 depends=(tmux)
 makedepends=(git)
@@ -24,7 +24,7 @@ backup=()
 options=()
 install=
 changelog=
-source=('git+https://github.com/samurai-os/samurai-tmux.git#branch=main')
+source=("git+$url")
 noextract=()
 sha256sums=("SKIP")
 validpgpkeys=()
@@ -36,5 +36,5 @@ pkgver() {
 
 package() {
   mkdir -p "${pkgdir}/etc"
-  cp "${srcdir}/etc/tmux.conf" "${pkgdir}/etc/tmux.conf"
+  cp "${srcdir}/${pkgname}/etc/tmux.conf" "${pkgdir}/etc/tmux.conf"
 }
